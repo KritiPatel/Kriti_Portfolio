@@ -424,6 +424,7 @@ const Portfolio: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
     const [isVisible, setIsVisible] = useState({
+        home: false,
         about: false,
         projects: false,
         services: false,
@@ -523,6 +524,7 @@ const Portfolio: React.FC = () => {
             };
 
             setIsVisible(prev => ({
+                home: prev.home || checkVisibility('home'),
                 about: prev.about || checkVisibility('about'),
                 projects: prev.projects || checkVisibility('projects'),
                 services: prev.services || checkVisibility('services'),
@@ -597,32 +599,56 @@ const Portfolio: React.FC = () => {
             </nav>
 
             {/* Hero Section */}
-            <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+            <section
+                id="home"
+                className="min-h-screen flex items-center justify-center relative overflow-hidden"
+            >
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20"></div>
+
                 <div className="container mx-auto px-4 text-center z-10">
-                    <div className="mb-8 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
-                        {/* <p className="text-purple-400 text-sm font-medium mb-4 tracking-wider">
-                            AVAILABLE FOR OPPORTUNITIES
-                        </p> */}
+                    <div
+                        className={`mb-8 transition-all duration-1000 ${isVisible.home ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                            }`}
+                    >
                         <h1 className="text-6xl md:text-8xl font-bold mb-6">
-                            <span className="block animate-in fade-in-0 slide-in-from-left-8 duration-1000 delay-200">KRITI</span>
-                            <span className="block text-purple-400 animate-in fade-in-0 slide-in-from-right-8 duration-1000 delay-400">PATEL</span>
+                            <span
+                                className={`block transition-all duration-1000 delay-200 ${isVisible.home ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+                                    }`}
+                            >
+                                KRITI
+                            </span>
+                            <span
+                                className={`block text-purple-400 transition-all duration-1000 delay-400 ${isVisible.home ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+                                    }`}
+                            >
+                                PATEL
+                            </span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-300 mb-8 animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 delay-600">BASED IN Gujarat, India</p>
+
+                        <p
+                            className={`text-xl md:text-2xl text-gray-300 mb-8 transition-all duration-1000 delay-600 ${isVisible.home ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                                }`}
+                        >
+                            BASED IN Gujarat, India
+                        </p>
                     </div>
 
-                    <div className="mb-12 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000 delay-800">
+                    <div
+                        className={`mb-12 transition-all duration-1000 delay-800 ${isVisible.home ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                            }`}
+                    >
                         <div className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
                             <div className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                                 I AM A PASSIONATE
                             </div>
-                            <div className="text-white mt-2">
-                                MERN STACK DEVELOPER.
-                            </div>
+                            <div className="text-white mt-2">MERN STACK DEVELOPER.</div>
                         </div>
                     </div>
 
-                    <div className="flex justify-center space-x-6 mb-12 animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 delay-1000">
+                    <div
+                        className={`flex justify-center space-x-6 mb-12 transition-all duration-1000 delay-1000 ${isVisible.home ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                            }`}
+                    >
                         <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110 hover:rotate-12">
                             <Github className="w-6 h-6" />
                         </a>
@@ -635,14 +661,14 @@ const Portfolio: React.FC = () => {
                     </div>
 
                     <button
-                        onClick={() => scrollToSection('about')}
+                        onClick={() => scrollToSection("about")}
                         className="animate-bounce"
                     >
                         <ChevronDown className="w-8 h-8 text-purple-400 hover:text-purple-300 transition-colors" />
                     </button>
                 </div>
             </section>
-            {/* <AboutSection /> */}
+
             {/* About Section */}
             <section id="about" className="py-20 bg-gray-900/50">
                 <div className="container mx-auto px-4">

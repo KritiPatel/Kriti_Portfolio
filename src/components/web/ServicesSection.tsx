@@ -1,11 +1,16 @@
-'use client';
-import React from "react";
+'use client'
+import React from 'react';
+import { Service } from '../../../types';
 
-export default function ServicesSection({ services, isVisible }) {
+interface ServicesSectionProps {
+    services: Service[];
+    isVisible: boolean;
+}
+
+const ServicesSection: React.FC<ServicesSectionProps> = ({ services, isVisible }) => {
     return (
         <>
-            <style>
-                {`
+            <style jsx>{`
                 .card-wrapper {
                     perspective: 1200px;
                 }
@@ -49,20 +54,19 @@ export default function ServicesSection({ services, isVisible }) {
                     transform: rotateY(180deg);
                     z-index: 1;
                 }
-                `}
-            </style>
+            `}</style>
 
             <section id="services" className="py-20 bg-gray-900/50">
                 <div className="container mx-auto px-4">
                     {/* Heading */}
-                    <h2 className={`text-4xl md:text-6xl font-bold mb-12 text-center transition-all duration-1000 ${isVisible.services
+                    <h2 className={`text-4xl md:text-6xl font-bold mb-12 text-center transition-all duration-1000 ${isVisible
                         ? 'opacity-100 translate-y-0'
                         : 'opacity-0 translate-y-12'
                         }`}>
                         MY <span className="text-purple-400">SERVICES</span>
                     </h2>
 
-                    <p className={`text-center text-gray-300 mb-16 max-w-2xl mx-auto transition-all duration-1000 delay-200 ${isVisible.services
+                    <p className={`text-center text-gray-300 mb-16 max-w-2xl mx-auto transition-all duration-1000 delay-200 ${isVisible
                         ? 'opacity-100 translate-y-0'
                         : 'opacity-0 translate-y-8'
                         }`}>
@@ -75,7 +79,9 @@ export default function ServicesSection({ services, isVisible }) {
                         {services.map((service, index) => (
                             <div
                                 key={service.id}
-                                className={`relative h-64 card-wrapper transition-all duration-1000 ${isVisible?.services ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                                className={`relative h-64 card-wrapper transition-all duration-1000 ${isVisible
+                                    ? 'opacity-100 translate-y-0'
+                                    : 'opacity-0 translate-y-12'
                                     }`}
                                 style={{ transitionDelay: `${400 + index * 100}ms` }}
                             >
@@ -83,7 +89,7 @@ export default function ServicesSection({ services, isVisible }) {
                                     {/* Front */}
                                     <div className="card-front">
                                         <div className="w-14 h-14 mb-4 bg-purple-600/20 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-purple-600/40">
-                                            <div className="text-purple-400 text-2xl">
+                                            <div className="text-purple-400 text-2xl flex items-center justify-center">
                                                 {service.icon}
                                             </div>
                                         </div>
@@ -93,7 +99,9 @@ export default function ServicesSection({ services, isVisible }) {
 
                                     {/* Back */}
                                     <div className="card-back">
-                                        <p className="text-gray-300 text-sm leading-relaxed px-2">{service.description}</p>
+                                        <p className="text-gray-300 text-sm leading-relaxed px-2">
+                                            {service.description}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -103,4 +111,6 @@ export default function ServicesSection({ services, isVisible }) {
             </section>
         </>
     );
-}
+};
+
+export default ServicesSection;
