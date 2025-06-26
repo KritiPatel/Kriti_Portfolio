@@ -2,6 +2,7 @@
 import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 import { Project } from '../../../types';
+import Container from '../ui/Container';
 
 interface ProjectsSectionProps {
     projects: Project[];
@@ -11,7 +12,7 @@ interface ProjectsSectionProps {
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects, isVisible }) => {
     return (
         <section id="projects" className="py-20">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <h2 className={`text-4xl md:text-6xl font-bold mb-12 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                     }`}>
                     FEATURED <span className="text-purple-400">PROJECTS</span>

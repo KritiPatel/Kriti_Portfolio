@@ -14,6 +14,7 @@ import Navigation from '@/components/web/Navigation';
 // Import types
 import { Project, Service, VisibilityState } from '../../../types';
 import { aboutData, menuItems, projects, services } from '../../../config/data';
+import Container from '@/components/ui/Container';
 
 const Portfolio: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -87,10 +88,12 @@ const Portfolio: React.FC = () => {
 
             <AboutSection {...aboutData} isVisible={isVisible.about} />
 
-            <ProjectsSection
-                projects={projects}
-                isVisible={isVisible.projects}
-            />
+            <Container>
+                <ProjectsSection
+                    projects={projects}
+                    isVisible={isVisible.projects}
+                />
+            </Container>
 
             <ServicesSection
                 services={services}
