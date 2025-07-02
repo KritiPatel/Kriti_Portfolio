@@ -56,9 +56,14 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                                 }`}
                         >
                             <div className="w-full h-96 bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-lg flex items-center justify-center hover:from-purple-600/40 hover:to-blue-600/40 transition-all duration-500 group">
-                                {icon}
+                                <img
+                                    src="/dev.webp"
+                                    alt="Developer"
+                                    className="h-4/5 w-auto object-contain transition-all duration-500 group-hover:scale-105"
+                                />
                             </div>
                         </div>
+
                     </div>
                 </div>
             </Container>
