@@ -42,6 +42,56 @@ export const projects: Project[] = [
         tech: ["React", "Socket.io", "Node.js", "MongoDB"],
         liveUrl: "#",
         githubUrl: "#"
+    },
+    {
+        id: 5,
+        title: "Portfolio Website",
+        description: "Modern portfolio website with smooth animations and responsive design.",
+        image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+        tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+        category: "Frontend",
+        liveUrl: "#",
+        githubUrl: "#"
+    },
+    {
+        id: 6,
+        title: "Blog Platform",
+        description: "Full-featured blog platform with markdown support and comment system.",
+        image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop",
+        tech: ["React", "Node.js", "MongoDB", "Express"],
+        category: "Full Stack",
+        liveUrl: "#",
+        githubUrl: "#"
+    },
+    {
+        id: 7,
+        title: "Real-time Chat App",
+        category: "Full Stack Development",
+        description: "WebSocket-powered chat application with file sharing, group chats, and message encryption.",
+        image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=600&h=400&fit=crop",
+        tech: ["React", "Socket.io", "Node.js", "MongoDB"],
+        liveUrl: "#",
+        githubUrl: "#"
+    },
+    {
+        id: 8,
+        title: "Portfolio Website",
+        description: "Modern portfolio website with smooth animations and responsive design.",
+        image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+        tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+        category: "Frontend",
+        liveUrl: "#",
+        githubUrl: "#"
+    },
+    {
+        id: 9,
+        title: "Blog Platform",
+        description: "Full-featured blog platform with markdown support and comment system.",
+        image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop",
+        tech: ["React", "Node.js", "MongoDB", "Express"],
+        category: "Full Stack",
+        liveUrl: "#",
+        githubUrl: "#"
     }
 ];
 
@@ -75,13 +125,13 @@ export const services: Service[] = [
 export const heroData: Hero = {
     firstName: 'KRITI',
     lastName: 'PATEL',
-    location: 'Gujarat, India',
+    location: 'TORONTO, ON, CANADA',
     about: 'I AM A PASSIONATE',
-    role: 'MERN STACK DEVELOPER.',
+    role: 'FULL STACK DEVELOPER.',
     socialIcons: [
-        { href: 'https://github.com/yourname', icon: <Github className="w-6 h-6" /> },
-        { href: 'https://linkedin.com/in/yourname', icon: <Linkedin className="w-6 h-6" /> },
-        { href: 'mailto:your@email.com', icon: <Mail className="w-6 h-6" /> },
+        // { href: 'https://github.com/yourname', icon: <Github className="w-6 h-6" /> },
+        { href: 'https://www.linkedin.com/in/kriti-patel/', icon: <Linkedin className="w-6 h-6" /> },
+        { href: 'mailto:kritipatel1900@email.com', icon: <Mail className="w-6 h-6" /> },
     ],
 };
 
